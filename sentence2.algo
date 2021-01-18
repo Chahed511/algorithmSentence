@@ -1,0 +1,31 @@
+ALGORITHM Sentence_Manip
+VAR 
+    carac: CHAR ; 
+    nb_voyelle,nb_mot,leng : INTEGER : = 0;
+    
+    
+BEGIN
+   while(carac<>'.')  do 
+   read(carac);  //read caractere  
+    leng++ ;   /* The length of the sentence (the number of characters) */
+    /*The number of words in the sentence */
+       if (carac=' ') then
+            nb_mot++;
+       end_if 
+    /*The number of vowels in the sentence */
+      switch (carac) do 
+        case 'a' :
+        case 'e' :
+        case 'i' :
+        case 'o' :
+        case 'u' :
+        case 'y' : nb_voyelle++; break;
+        default : break;
+        end_switch 
+    end_while 
+
+ write("The length of the sentence : \n", leng);
+ write("The number of words in the sentence : \n", nb_mot);
+ write("The number of vowels in the sentence: \n", nb_voyelle);
+
+END
